@@ -1,5 +1,6 @@
 # Welcome to Kali-Linux
 
+https://kali.training/topic/configuring-the-network/
 
 ### NETWORK
 service wicd stop
@@ -29,3 +30,11 @@ reaver -i wlan1mon -c CHANNEL -b BSSID -v
 
 Re-install KaliLinux
 apt-get install kali-linux-full -y
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+
