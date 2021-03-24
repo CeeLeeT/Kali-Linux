@@ -1,52 +1,31 @@
-## Welcome to GitHub Pages
+# Welcome to Kali-Linux
 
-You can use the [editor on GitHub](https://github.com/CeeLeeT/CeeLeeT.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### NETWORK
+service wicd stop
+service network-manager restart
+ifconfig -a
 
-### Markdown
+/etc/network/hostname
+invoke-rc.d hostname.sh start
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+/etc/network/interface
+/etc/network/interfaces
+/etc/init.d/networking-restart
+service networking restart
+update-rc.d networking enable
+/etc/resolv.conf
 
-```markdown
-Syntax highlighted code block
+Monitor Mode:
+ifconfig wlan1 down
+ifconfig wlan1 mode monitor
+ifconfig wlan1 up
+iwconfig
 
-# Header 1
-## Header 2
-### Header 3
+Wlan WPS check:
+wash -i wlan1mon
+reaver -i wlan1mon -c CHANNEL -b BSSID -v
+(-d 5 = delay in Sekunden)
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-## Python Code
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-```
-
-## Task List
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CeeLeeT/CeeLeeT.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Re-install KaliLinux
+apt-get install kali-linux-full -y
